@@ -246,7 +246,7 @@ input_dir = "../data/"
 # 2D turbulent channel flow = 'turbulent_channel/'
 # ICA brain aneurysm = 'ICA/'
 # MCA brain aneurysm = 'MCA/'
-case = 'turbulent_channel/'
+case = 'flow_over_cylinder/'
 
 print('Fluid flow test case: ' + case, flush = True) 
 # velocity series file name 

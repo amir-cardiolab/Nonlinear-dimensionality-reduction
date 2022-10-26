@@ -242,7 +242,7 @@ scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = 3000, gamma =
 
 
 # Start the training loop
-num_epochs = 10
+num_epochs = 9000
 outputs = []
 loss_list = []
 

@@ -240,7 +240,7 @@ scheduler_active_flag = True
 
 # Start the training loop
 
-num_epochs = 3
+num_epochs = 9000
 outputs = []
 loss_list = []
 start = time.time()
