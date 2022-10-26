@@ -199,7 +199,10 @@ def save_modes(X_lem, mesh, output_file, modesToSave, field_name):
         mesh.PointData.append(U_i, 'mode_'+str(i))
         if i == 0 and subtract_mean_flag:           #save the temporal mean
             mesh.PointData.append(X_mean, 'U_mean')
-        writer = vtk.vtkUnstructuredGridWriter()
+        if case == 'turbulent_channel/':
+            writer = vtk.vtkRectilinearGridWriter()
+        else:
+            writer = vtk.vtkUnstructuredGridWriter()
         writer.SetFileName(output_file)
         writer.SetInputData(mesh.VTKObject)
         writer.Write()
@@ -301,7 +304,7 @@ input_dir = "../data/"
 # ICA brain aneurysm = 'ICA/'
 # MCA brain aneurysm = 'MCA/'
 case = 'flow_over_cylinder/'
-#case = 'turbulent_channel/'
+
 print('Fluid flow test case: ' + case, flush = True) 
 # velocity series file name 
 filename = 'velocity_'

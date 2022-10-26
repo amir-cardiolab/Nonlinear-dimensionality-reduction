@@ -162,7 +162,10 @@ def save_modes(X_isomap, mesh, output_file, modesToSave, field_name):
         mesh.PointData.append(U_i, 'mode_'+str(i))
         if i == 0 and subtract_mean_flag:           #save the temporal mean
             mesh.PointData.append(X_mean, 'U_mean')
-        writer = vtk.vtkUnstructuredGridWriter()
+        if case == 'turbulent_channel/':
+            writer = vtk.vtkRectilinearGridWriter()
+        else:
+            writer = vtk.vtkUnstructuredGridWriter()
         writer.SetFileName(output_file)
         writer.SetInputData(mesh.VTKObject)
         writer.Write()
@@ -260,8 +263,8 @@ input_dir = "../data/"
 # 2D turbulent channel flow = 'turbulent_channel/'
 # ICA brain aneurysm = 'ICA/'
 # MCA brain aneurysm = 'MCA/'
-#case = 'flow_over_cylinder/'
-case = 'MCA/'
+case = 'flow_over_cylinder/'
+
 print('Fluid flow test case: ' + case, flush = True) 
 # velocity series file name 
 filename = 'velocity_'
@@ -297,7 +300,7 @@ X, mesh = read_velocity_data(input_dir + case, filename, field_name, reader, fil
 # transpose_flag - temporal vs spatial arrangement of data
 #        if True: temporal size of the data will be reduced (leading to spatial modes)
 #        if False: spatial size of the data will be reduced (NOT leading to spatial modes) 
-transpose_flag = True
+transpose_flag = False
 
 X = convertToMagnitude(X)
 
@@ -315,7 +318,7 @@ print("Data matrix X is n by m:", n, "x", m, flush = True)
 # k_NN - number of nearest neighbors used for Isomap
 # r_max - number of components to be kept in the latent space
 # reg - regularization parameter
-k_NN = 30
+k_NN = 50
 r_max = 10
 reg = 1e-9
 

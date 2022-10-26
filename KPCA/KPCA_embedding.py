@@ -169,7 +169,10 @@ def save_modes(X_kpca, mesh, output_file, modesToSave, field_name):
         mesh.PointData.append(U_i, 'mode_'+str(i))
         if i == 0 and subtract_mean_flag:           #save the temporal mean
             mesh.PointData.append(X_mean, 'U_mean')
-        writer = vtk.vtkUnstructuredGridWriter()
+        if case == 'turbulent_channel/':
+            writer = vtk.vtkRectilinearGridWriter()
+        else:
+            writer = vtk.vtkUnstructuredGridWriter()
         writer.SetFileName(output_file)
         writer.SetInputData(mesh.VTKObject)
         writer.Write()
@@ -324,7 +327,7 @@ kernel_fcn = 'rbf'
 # gamma - parameter for rbf, sigmoid kernel
 # degree - parameter for the poly kernel
 # alpha - regularization parameter
-gamma = 20
+gamma = 10
 degree = 1
 alpha = 1e-3
 r_max = 10

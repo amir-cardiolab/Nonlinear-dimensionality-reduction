@@ -1,7 +1,9 @@
 # Nonlinear-dimensionality-reduction
 
 This repository contains the python codes and data files for the following paper:
+
 Comparing different nonlinear dimensionality reduction techniques for data-driven unsteady fluid flow modeling
+
 Hunor Csala, Scott T. M. Dawson, Amirhossein Arzani
 
 
