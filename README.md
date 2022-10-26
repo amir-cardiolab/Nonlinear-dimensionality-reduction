@@ -49,6 +49,6 @@ https://pytorch.org/get-started/locally/
 Data:
 
 The datasets used for test cases are too large for Github, therefore they are provided with the following link:\
-https://uofu.box.com/s/z4qyg0fbnsdk9j8bultpyy9hxcawewkp
+https://1drv.ms/u/s!AuYkVS2by4myhe1r_TUO1fe0ncP7kA?e=xPprIV
 
 They should be placed in the */data* folder under the corresponding test case name. There is a zipped version of all four test cases, but the cases are also available for download separately.
