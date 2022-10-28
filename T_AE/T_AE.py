@@ -311,6 +311,9 @@ for i in index_list:
 
 error_rec = np.linalg.norm(x_out-xrec_out)/np.linalg.norm(x_out)
 print('Relative reconstruction error: %.3e' % (error_rec))
+
+torch.save(model.state_dict(),"./T_AE_net" + ".pt")
+
 loss_mat = np.asarray(loss_list)
 plt.figure(1)
 plt.plot(loss_mat[:,0],loss_mat[:,1],linestyle='-')

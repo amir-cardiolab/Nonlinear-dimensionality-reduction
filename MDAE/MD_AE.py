@@ -331,6 +331,8 @@ xrec_out = xrec_out1 + xrec_out2 + xrec_out3 + xrec_out4 + xrec_out5 + xrec_out6
 error_rec = np.linalg.norm(x_out-xrec_out)/np.linalg.norm(x_out)
 print('Relative reconstruction error: %.5e' % (error_rec))
 
+torch.save(model.state_dict(),"./MDAE_net" + ".pt")
+
 # Save the modes and the reconstructed field
 save_rec_flag = True
 
