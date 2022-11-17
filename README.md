@@ -2,7 +2,9 @@
 
 This repository contains the python codes and data files for the following paper:\
 Comparing different nonlinear dimensionality reduction techniques for data-driven unsteady fluid flow modeling\
-Hunor Csala, Scott T. M. Dawson, Amirhossein Arzani
+Hunor Csala, Scott T. M. Dawson, Amirhossein Arzani\
+Physics of Fluids: https://doi.org/10.1063/5.0127284
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\
 Python codes
