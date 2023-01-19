@@ -327,5 +327,5 @@ if save_rec_flag == True:
     
 plotToScreen = True
 
-plotAndSaveReconstruction(err_rec,save_rec, X, X_reconstructed, mesh, reconstruction_filename, plotToScreen, r_max, r_step, field_name)
+plotAndSaveReconstruction(err_rec,save_rec_flag, X, X_reconstructed, mesh, reconstruction_filename, plotToScreen, r_max, r_step, field_name)
 
