@@ -28,6 +28,8 @@ By default PCA and the manifold learning cases are set up for spatial reduction 
 
 * T_AE - Autoencoder (temporal reduction)
 
+Note that the hyperparameters in the code need to be changed manually for the different test cases and the spatial/temporal reduction cases. These can be found in Table A.1 in the appendix.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Installation:\
